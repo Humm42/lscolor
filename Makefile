@@ -5,13 +5,13 @@
 include config.mk
 
 BIN=lscolor
-OBJ=util.o
+OBJ=lscolor.o util.o
 
 NUKEFILES=config.h
 
 all: ${BIN}
 
-${BIN}: ${OBJ} config.h
+${OBJ}: config.h
 
 .SUFFIXES:
 .SUFFIXES: .c .o
@@ -19,8 +19,8 @@ ${BIN}: ${OBJ} config.h
 .c.o:
 	${CC} -c ${CPPFLAGS} ${CFLAGS} $<
 
-.o:
-	${LD} -o$@ ${LDFLAGS} $< ${OBJ}
+${BIN}: ${OBJ}
+	${LD} -o$@ ${LDFLAGS} ${OBJ}
 
 config.h:
 	cp config.def.h config.h
