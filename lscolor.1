@@ -1,0 +1,40 @@
+.Dd March 29, 2020
+.Dt LSCOLOR 1
+.Os
+.
+.Sh NAME
+.Nm lscolor
+.Nd colorize ls output
+.
+.Sh SYNOPSIS
+.Nm ls
+.Fl F | Nm
+.
+.Sh DESCRIPTION
+.Lp
+.Nm
+reads output in the format of
+.Xr ls 1
+with the
+.Fl F
+flag on standard input and writes it with additional color escape sequences
+to standard output.
+.
+.Sh "EXIT STATUS"
+.Ex -std
+.
+.Sh "SEE ALSO"
+.Xr ls 1
+.
+.Sh HISTORY
+.Nm
+first appeared in 2020 to enable colored output of
+.Xr ls 1
+on OpenBSD.
+.
+.Sh AUTHORS
+.An Humm
+.
+.Sh BUGS
+.Lp
+It isn’t possible to specify new file types in config.h.
